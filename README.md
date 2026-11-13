@@ -117,3 +117,13 @@ It also demonstrates the use of ASP.NET Core MVC, Entity Framework Core, databas
 ---
 
 **Developed as a C# and ASP.NET Core MVC project.**
+## 📸 Application Screenshots
+
+### Dashboard
+![Dashboard](screenshots/dashboard.png)
+
+### Employee List
+![Employee List](screenshots/employee-list.png)
+
+### Leave List
+![Leave List](screenshots/leave-list.png)
