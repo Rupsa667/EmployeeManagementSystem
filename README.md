@@ -16,6 +16,7 @@ This application helps manage employee information and handle employee leave req
 ### 2. Employee Management
 - Add new employees.
 - View all employees.
+- Search employees by name.
 - Edit employee details.
 - Delete employee records.
 
@@ -26,6 +27,43 @@ This application helps manage employee information and handle employee leave req
 - View all leave requests.
 - Approve or reject leave requests.
 - Track leave status (Pending, Approved, Rejected).
+
+## 📸 Application Screenshots
+
+### 1. Home Dashboard
+Shows summary cards: Total Employees, Total Leaves, Pending, Approved and Rejected leaves, along with quick action buttons.
+
+![Home Dashboard](screenshots/01-home-dashboard.png)
+
+### 2. Add Employee
+Form to add a new employee with name, email, phone, salary and joining date.
+
+![Add Employee](screenshots/02-add-employee.png)
+
+### 3. Employee List
+Lists all employees with search by name, and Edit / Delete options.
+
+![Employee List](screenshots/03-employee-list.png)
+
+### 4. Apply for Leave
+Employee can apply for leave by selecting leave type, from/to date and reason.
+
+![Apply Leave](screenshots/04-apply-leave.png)
+
+### 5. Leave List (Pending Request)
+Displays all leave requests with status and Approve / Reject actions. The new request shows as **Pending**.
+
+![Leave List Pending](screenshots/05-leave-list-pending.png)
+
+### 6. Leave List (After Approval)
+After clicking Approve, the status changes to **Approved**.
+
+![Leave List Approved](screenshots/06-leave-list-approved.png)
+
+### 7. Updated Dashboard
+Dashboard counts update automatically: 5 employees, 4 total leaves, 1 pending, 2 approved, 1 rejected.
+
+![Updated Dashboard](screenshots/07-home-dashboard-updated.png)
 
 ## 🛠️ Technologies Used
 
@@ -60,6 +98,7 @@ EmployeeManagementSystem/
 │
 ├── Migrations/
 ├── wwwroot/
+├── screenshots/
 ├── appsettings.json
 ├── Program.cs
 └── EmployeeManagementSystem.csproj
@@ -117,13 +156,3 @@ It also demonstrates the use of ASP.NET Core MVC, Entity Framework Core, databas
 ---
 
 **Developed as a C# and ASP.NET Core MVC project.**
-## 📸 Application Screenshots
-
-### Dashboard
-![Dashboard](screenshots/dashboard.png)
-
-### Employee List
-![Employee List](screenshots/employee-list.png)
-
-### Leave List
-![Leave List](screenshots/leave-list.png)
