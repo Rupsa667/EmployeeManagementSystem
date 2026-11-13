@@ -3,7 +3,6 @@ using System;
 using EmployeeManagementSystem.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
-using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -16,43 +15,37 @@ partial class AppDbContextModelSnapshot : ModelSnapshot
     // If you encounter a merge conflict in the line below, it means you need to
     // discard one of the migration branches and recreate its migrations on top of
     // the other branch. See https://aka.ms/efcore-docs-migrations-conflicts for more info.
-    public override string LastMigrationId => "20261112111209_AddLeaveTable";
+    public override string LastMigrationId => "20261113065322_InitialCreate";
 
     protected override void BuildModel(ModelBuilder modelBuilder)
     {
 #pragma warning disable 612, 618
-        modelBuilder
-            .HasAnnotation("ProductVersion", "11.0.0")
-            .HasAnnotation("Relational:MaxIdentifierLength", 128);
-
-        SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
+        modelBuilder.HasAnnotation("ProductVersion", "11.0.0");
 
         modelBuilder.Entity("EmployeeManagementSystem.Models.Employee", b =>
             {
-                var id = b.Property<int>("Id")
+                b.Property<int>("Id")
                     .ValueGeneratedOnAdd()
-                    .HasColumnType("int");
-
-                SqlServerPropertyBuilderExtensions.UseIdentityColumn(id);
+                    .HasColumnType("INTEGER");
 
                 b.Property<string>("Email")
                     .IsRequired()
-                    .HasColumnType("nvarchar(max)");
+                    .HasColumnType("TEXT");
 
                 b.Property<string>("EmpPhone")
                     .IsRequired()
-                    .HasColumnType("nvarchar(max)");
+                    .HasColumnType("TEXT");
 
                 b.Property<DateTime>("JoiningDate")
-                    .HasColumnType("datetime2");
+                    .HasColumnType("TEXT");
 
                 b.Property<string>("Name")
                     .IsRequired()
-                    .HasColumnType("nvarchar(max)");
+                    .HasColumnType("TEXT");
 
                 b.Property<decimal>("Salary")
                     .HasPrecision(18, 2)
-                    .HasColumnType("decimal(18,2)");
+                    .HasColumnType("TEXT");
 
                 b.HasKey("Id");
 
@@ -61,32 +54,30 @@ partial class AppDbContextModelSnapshot : ModelSnapshot
 
         modelBuilder.Entity("EmployeeManagementSystem.Models.Leave", b =>
             {
-                var id = b.Property<int>("Id")
+                b.Property<int>("Id")
                     .ValueGeneratedOnAdd()
-                    .HasColumnType("int");
-
-                SqlServerPropertyBuilderExtensions.UseIdentityColumn(id);
+                    .HasColumnType("INTEGER");
 
                 b.Property<int>("EmployeeId")
-                    .HasColumnType("int");
+                    .HasColumnType("INTEGER");
 
                 b.Property<DateTime>("FromDate")
-                    .HasColumnType("datetime2");
+                    .HasColumnType("TEXT");
 
                 b.Property<string>("LeaveType")
                     .IsRequired()
-                    .HasColumnType("nvarchar(max)");
+                    .HasColumnType("TEXT");
 
                 b.Property<string>("Reason")
                     .IsRequired()
-                    .HasColumnType("nvarchar(max)");
+                    .HasColumnType("TEXT");
 
                 b.Property<string>("Status")
                     .IsRequired()
-                    .HasColumnType("nvarchar(max)");
+                    .HasColumnType("TEXT");
 
                 b.Property<DateTime>("ToDate")
-                    .HasColumnType("datetime2");
+                    .HasColumnType("TEXT");
 
                 b.HasKey("Id");
 
