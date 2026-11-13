@@ -1,0 +1,59 @@
+@{
+    ViewData["Title"] = "Dashboard";
+}
+
+<div class="text-center">
+    <h1>Employee Management System</h1>
+    <p>Welcome to Employee Management System</p>
+</div>
+
+<div class="row mt-4 text-center">
+
+    <div class="col-md-3">
+        <div class="card p-3">
+            <h5>Total Employees</h5>
+            <h2>@ViewBag.TotalEmployees</h2>
+        </div>
+    </div>
+
+    <div class="col-md-3">
+        <div class="card p-3">
+            <h5>Total Leaves</h5>
+            <h2>@ViewBag.TotalLeaves</h2>
+        </div>
+    </div>
+
+    <div class="col-md-3">
+        <div class="card p-3">
+            <h5>Pending Leaves</h5>
+            <h2>@ViewBag.PendingLeaves</h2>
+        </div>
+    </div>
+
+    <div class="col-md-3">
+        <div class="card p-3">
+            <h5>Approved Leaves</h5>
+            <h2>@ViewBag.ApprovedLeaves</h2>
+        </div>
+    </div>
+
+    <div class="col-md-3">
+        <div class="card p-3">
+            <h5>Rejected Leaves</h5>
+            <h2>@ViewBag.RejectedLeaves</h2>
+        </div>
+    </div>
+
+
+</div>
+
+<div class="text-center mt-4">
+    <a asp-controller="Employees" asp-action="Index" class="btn btn-primary m-2">View Employees</a>
+
+    <a asp-controller="Employees" asp-action="Create" class="btn btn-success m-2">Add Employee</a>
+
+    <a asp-controller="Leaves" asp-action="Create" class="btn btn-info m-2">Apply Leave</a>
+
+    <a asp-controller="Leaves" asp-action="Index" class="btn btn-warning m-2">View Leaves</a>
+</div>
+

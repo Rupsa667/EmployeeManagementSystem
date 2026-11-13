@@ -1,0 +1,36 @@
+@model EmployeeManagementSystem.Models.Employee
+
+<h2>Add Employee</h2>
+
+<a asp-controller="Home" asp-action="Index" class="btn btn-secondary">
+    Back to Home
+</a>
+
+<form asp-action="Create" method="post">
+
+    <label>Name</label>
+    <input asp-for="Name" class="form-control" />
+    <span asp-validation-for="Name" class="text-danger"></span>
+
+    <label>Email</label>
+    <input asp-for="Email" class="form-control" />
+    <span asp-validation-for="Email" class="text-danger"></span>
+
+    <label>Phone</label>
+    <input asp-for="EmpPhone" class="form-control" />
+    <span asp-validation-for="EmpPhone" class="text-danger"></span>
+
+    <label>Salary</label>
+    <input asp-for="Salary" class="form-control" />
+    <span asp-validation-for="Salary" class="text-danger"></span>
+
+    <label>Joining Date</label>
+    <input asp-for="JoiningDate" type="date" class="form-control" />
+    <span asp-validation-for="JoiningDate" class="text-danger"></span>
+
+    <br />
+
+    <button type="submit" class="btn btn-primary">Save</button>
+
+</form>
+

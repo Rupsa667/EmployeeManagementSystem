@@ -1,0 +1,53 @@
+@model EmployeeManagementSystem.Models.Leave
+
+<h2>Apply for Leave</h2>
+
+<a asp-controller="Home" asp-action="Index" class="btn btn-secondary">
+    Back to Home
+</a>
+
+
+<form asp-action="Create" method="post">
+
+    <div class="mb-3">
+        <label>Employee</label>
+
+        <select asp-for="EmployeeId" class="form-control" required>
+            <option value="">Select Employee</option>
+
+            @foreach (var emp in ViewBag.Employees)
+            {
+                <option value="@emp.Id">@emp.Name</option>
+            }
+        </select>
+
+    </div>
+
+    <div class="mb-3">
+        <label>Leave Type</label>
+        <input asp-for="LeaveType" class="form-control" />
+        <span asp-validation-for="LeaveType" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label>From Date</label>
+        <input asp-for="FromDate" type="date" class="form-control" />
+    </div>
+
+    <div class="mb-3">
+        <label>To Date</label>
+        <input asp-for="ToDate" type="date" class="form-control" />
+        <span asp-validation-for="ToDate" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label>Reason</label>
+        <input asp-for="Reason" class="form-control" />
+        <span asp-validation-for="Reason" class="text-danger"></span>
+    </div>
+
+    <button type="submit" class="btn btn-primary">
+        Apply Leave
+    </button>
+
+</form>

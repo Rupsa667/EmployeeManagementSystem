@@ -1,0 +1,32 @@
+@model EmployeeManagementSystem.Models.Employee
+
+<h2>Edit Employee</h2>
+
+<a asp-controller="Home" asp-action="Index" class="btn btn-secondary">
+    Back to Home
+</a>
+
+<form asp-action="Edit" method="post">
+
+    <input type="hidden" asp-for="Id" />
+
+    <label>Name</label>
+    <input asp-for="Name" class="form-control" />
+
+    <label>Email</label>
+    <input asp-for="Email" class="form-control" />
+
+    <label>Phone</label>
+    <input asp-for="EmpPhone" class="form-control" />
+
+    <label>Salary</label>
+    <input asp-for="Salary" class="form-control" />
+
+    <label>Joining Date</label>
+    <input asp-for="JoiningDate" type="date" class="form-control" />
+
+    <br />
+
+    <button type="submit" class="btn btn-primary">Update</button>
+
+</form>

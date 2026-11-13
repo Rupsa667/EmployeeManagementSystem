@@ -1,0 +1,48 @@
+@model IEnumerable<EmployeeManagementSystem.Models.Leave>
+
+<h2>Leave List</h2>
+
+<a asp-controller="Home" asp-action="Index" class="btn btn-secondary">
+    Back to Home
+</a>
+
+<a asp-action="Create" class="btn btn-primary">Apply for Leave</a>
+
+<table class="table table-bordered mt-3">
+    <tr>
+        <th>Id</th>
+        <th>Employee ID</th>
+        <th>Leave Type</th>
+        <th>From Date</th>
+        <th>To Date</th>
+        <th>Reason</th>
+        <th>Status</th>
+        <th>Action</th>
+    </tr>
+
+    @foreach (var leave in Model)
+    {
+        <tr>
+            <td>@leave.Id</td>
+            <td>@leave.Employee.Name</td>
+            <td>@leave.LeaveType</td>
+            <td>@leave.FromDate.ToShortDateString()</td>
+            <td>@leave.ToDate.ToShortDateString()</td>
+            <td>@leave.Reason</td>
+            <td>@leave.Status</td>
+            <td>
+                <td>
+                    <form asp-action="Approve" asp-route-id="@leave.Id" method="post">
+                        <button type="submit" class="btn btn-success">Approve</button>
+                    </form>
+
+                    <form asp-action="Reject" asp-route-id="@leave.Id" method="post">
+                        <button type="submit" class="btn btn-danger">Reject</button>
+                    </form>
+                </td>
+        </tr>
+            
+
+    }
+</table>
+

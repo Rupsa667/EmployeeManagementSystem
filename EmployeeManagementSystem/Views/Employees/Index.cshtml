@@ -1,0 +1,48 @@
+@model IEnumerable<EmployeeManagementSystem.Models.Employee>
+
+<h2>Employee List</h2>
+
+<form asp-action="Index" method="get" class="mb-3">
+    <input type="text" name="search" placeholder="Search Employee Name" class="form-control" style="width: 250px;" />
+    <button type="submit" class="btn btn-primary mt-2">Search</button>
+</form>
+
+<a asp-action="Create" class="btn btn-primary">Add Employee</a>
+
+<table class="table table-bordered mt-3">
+    <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Phone</th>
+        <th>Salary</th>
+        <th>Joining Date</th>
+        <th>Action</th>
+        
+    </tr>
+
+    @foreach (var emp in Model)
+    {
+        <tr>
+            <td>@emp.Id</td>
+            <td>@emp.Name</td>
+            <td>@emp.Email</td>
+            <td>@emp.EmpPhone</td>
+            <td>@emp.Salary</td>
+            <td>@emp.JoiningDate.ToShortDateString()</td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@emp.Id">Edit</a>
+                
+                <form asp-action="Delete" asp-route-id="@emp.Id" method="post">
+                    <button type="submit" style="background:none; border:none; color:blue; text-decoration:underline; cursor:pointer;">
+                        Delete
+                    </button>
+                </form/>
+                     
+            </td>
+
+        </tr>
+    }
+</table>
+
+
