@@ -65,13 +65,19 @@ Dashboard counts update automatically: 5 employees, 4 total leaves, 1 pending, 2
 
 ![Updated Dashboard](screenshots/07-home-dashboard-updated.png)
 
+### 8. SQL Server Database
+Data is stored in a **SQL Server** database named `EmployeeDB`. The `Employees` and `Leaves` tables are created through Entity Framework Core migrations, as shown in SQL Server Management Studio (SSMS).
+
+![SQL Server Database](screenshots/08-sql-server-database.png)
+
 ## 🛠️ Technologies Used
 
 - **Backend:** C#, ASP.NET Core MVC
 - **ORM:** Entity Framework Core
-- **Database:** SQLite
+- **Database:** Microsoft SQL Server
+- **Database Tool:** SQL Server Management Studio (SSMS)
 - **Frontend:** HTML, CSS, Bootstrap, Razor Views
-- **Development Environment:** Visual Studio / GitHub Codespaces
+- **Development Environment:** Visual Studio
 
 ## 📂 Project Structure
 
@@ -106,6 +112,12 @@ EmployeeManagementSystem/
 
 ## ⚙️ How to Run the Project
 
+### Prerequisites
+
+- .NET SDK
+- SQL Server (local instance)
+- SQL Server Management Studio (optional, for viewing data)
+
 ### Step 1: Clone the Repository
 
 ```bash
@@ -118,25 +130,37 @@ git clone https://github.com/Rupsa667/EmployeeManagementSystem.git
 cd EmployeeManagementSystem/EmployeeManagementSystem
 ```
 
-### Step 3: Restore Dependencies
+### Step 3: Configure the Database Connection
+
+Open `appsettings.json` and update the connection string according to your SQL Server setup. Example:
+
+```json
+"ConnectionStrings": {
+  "DefaultConnection": "Server=localhost;Database=EmployeeDB;Trusted_Connection=True;TrustServerCertificate=True;"
+}
+```
+
+### Step 4: Restore Dependencies
 
 ```bash
 dotnet restore
 ```
 
-### Step 4: Update the Database
+### Step 5: Update the Database
 
 ```bash
 dotnet ef database update
 ```
 
-### Step 5: Run the Application
+This creates the `EmployeeDB` database with the `Employees` and `Leaves` tables.
+
+### Step 6: Run the Application
 
 ```bash
 dotnet run
 ```
 
-Open the forwarded application URL in your browser.
+Open the application URL shown in the terminal in your browser.
 
 ## 📊 Application Workflow
 
@@ -151,7 +175,7 @@ Open the forwarded application URL in your browser.
 
 The main objective of this project is to simplify employee record management and leave request handling through a web-based application.
 
-It also demonstrates the use of ASP.NET Core MVC, Entity Framework Core, database operations, and the MVC architecture in a practical project.
+It also demonstrates the use of ASP.NET Core MVC, Entity Framework Core, SQL Server database operations, and the MVC architecture in a practical project.
 
 ---
 
